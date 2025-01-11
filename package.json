@@ -5,6 +5,6 @@
     "startBackend": "cd backend && npm start",
     "startFrontend": "cd frontend && npm start",
     "build": "cd frontend && npm run build",
-    "heroku-postbuild": "cd frontend && npm install --unsafe-perm && npm run build && cd ../backend && npm install"
+    "heroku-postbuild": "echo 'Running heroku-postbuild' && cd frontend && npm install --unsafe-perm && npm run build && echo 'Frontend build complete' && cd ../backend && npm install && echo 'Backend install complete'"
   }
 }
