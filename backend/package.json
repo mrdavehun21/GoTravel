@@ -1,10 +1,11 @@
 {
    "scripts": {
-	"start": "node index.js"
-  },
-  "dependencies": {
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "express": "^4.21.2"
-  }
+      "start": "node index.js"
+   },
+   "dependencies": {
+      "body-parser": "^1.20.3",
+      "cors": "^2.8.5",
+      "dotenv": "^16.4.7",
+      "express": "^4.21.2"
+   }
 }
