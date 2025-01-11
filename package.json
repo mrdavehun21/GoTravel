@@ -1,0 +1,14 @@
+{
+  "name": "go-travel-booking",
+  "engines": {
+    "node": "22.12.0",
+    "npm": "10.9.2"
+  },
+  "scripts": {
+    "start": "node backend/index.js",
+    "startBackend": "cd backend && npm start",
+    "startFrontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "heroku-postbuild": "cd frontend && npm install --unsafe-perm && npm run build && cd ../backend && npm install"
+  }
+}
