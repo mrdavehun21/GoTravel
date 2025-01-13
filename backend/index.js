@@ -7,7 +7,7 @@ const fs = require('fs');
 require('dotenv').config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use(cors());
@@ -68,6 +68,9 @@ app.get('/api/cities', async (req, res) => {
   let Cities = await amadeus.referenceData.locations.cities.get({
     keyword: searchTerms,
   });
+  // Only return city names
+  // Filter out cities if they don't have a IATA code
+  Cities.data = Cities.data.filter(city => city.iataCode);
   Cities = Cities.data.map(city => city.name);
   res.json(Cities);
 });
